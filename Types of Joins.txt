@@ -1,0 +1,79 @@
+1. INNER JOIN
+
+👉 Returns only rows where both tables have a match.
+
+SELECT C.CName, O.Orders
+FROM Customers AS C
+INNER JOIN Orders AS O
+ON C.CustomerID = O.CustomerID;
+
+
+
+2. LEFT JOIN / LEFT OUTER JOIN
+
+👉 Returns all rows from left table + matched rows from right (NULL if no match).
+
+SELECT C.CName, O.Orders
+FROM Customers AS C
+LEFT JOIN Orders AS O
+ON C.CustomerID = O.CustomerID;
+
+
+
+3. RIGHT JOIN
+
+👉 Returns all rows from right table + matched rows from left (NULL if no match).
+
+SELECT C.CName, O.Orders
+FROM Customers AS C
+RIGHT JOIN Orders AS O
+ON C.CustomerID = O.CustomerID;
+
+
+
+4. FULL JOIN (FULL OUTER JOIN)
+
+👉 Returns all rows from both tables, matching where possible, otherwise NULL.
+
+SELECT C.CName, O.Orders
+FROM Customers AS C
+FULL OUTER JOIN Orders AS O
+ON C.CustomerID = O.CustomerID;
+
+
+
+5. CROSS JOIN
+
+👉 Returns Cartesian product (all possible row combinations).
+
+SELECT C.CName, O.Orders
+FROM Customers AS C
+CROSS JOIN Orders AS O;
+
+
+
+6. SELF JOIN
+
+👉 A table joins with itself (useful for hierarchical data).
+
+SELECT A.CName AS Customer, B.CName AS Referrer
+FROM Customers AS A
+INNER JOIN Customers AS B
+ON A.RefID = B.CustomerID;
+
+
+
+7. NATURAL JOIN
+
+👉 Joins automatically on columns with the same name in both tables.
+
+SELECT *
+FROM Customers
+NATURAL JOIN Orders;
+
+
+⚡ Note: If you write JOIN without ON, 
+
+   SELECT * FROM Customers JOIN Orders;
+
+   it becomes a CROSS JOIN, multiplying rows.
