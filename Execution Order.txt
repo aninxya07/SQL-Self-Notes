@@ -1,0 +1,12 @@
+SQL Execution Order
+
+1. FROM → Decide the source tables and perform joins.
+2. WHERE → Filter rows before grouping.
+3. GROUP BY → Group rows into sets for aggregation.
+4. HAVING → Filter groups after aggregation.
+5. SELECT → Pick columns and compute expressions.
+6. DISTINCT → Remove duplicate rows.
+7. ORDER BY → Sort the result set.
+8. LIMIT → Restrict the number of rows returned.
+
+First Find Where Groups Have Selected Distinct Ordered Limits
